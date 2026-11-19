@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mole Collector</title>
+  <link rel="stylesheet" href="final.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Mole Games</h1>
+
+    <div id="menu" class="page">
+      <p>Move around and collect the answer.</p>
+      <div class="speedBox"><label>Speed</label><input id="speedSlider" type="range" min="180" max="360" value="300"><b id="speedText">Slow</b></div>
+      <label class="practice"><input id="practice" type="checkbox" checked> Practice mode</label>
+      <button id="play" class="button play">Play Snake</button>
+      <button id="quizButton" class="button pink">Answer Rush</button>
+      <button id="addButton" class="button yellow">Add question</button>
+      <button id="manageButton" class="button yellow">Manage questions</button>
+    </div>
+
+    <div id="game" class="page hidden">
+      <div class="status">
+        <div>Score<br><b id="score">0</b></div>
+        <div class="question"><small id="category">MOLES</small><b id="questionText">Question</b></div>
+        <div>Streak<br><b id="streak">0</b></div>
+      </div>
+      <div id="note" class="note"></div>
+      <canvas id="board" width="600" height="400"></canvas>
+      <div id="message" class="message hidden"></div>
+      <div class="touch">
+        <button data-dir="up">▲</button>
+        <button data-dir="left">◀</button>
+        <button data-dir="down">▼</button>
+        <button data-dir="right">▶</button>
+      </div>
+    </div>
+
+    <div id="addPage" class="page hidden">
+      <h2>Add a question</h2>
+      <input id="category" type="text" placeholder="Category">
+      <input id="question" type="text" placeholder="Question">
+      <input id="answer" type="text" placeholder="Correct answer">
+      <input id="wrong1" type="text" placeholder="Wrong answer 1">
+      <input id="wrong2" type="text" placeholder="Wrong answer 2">
+      <input id="wrong3" type="text" placeholder="Wrong answer 3">
+      <button id="save" class="button play">Save question</button>
+      <p id="saved"></p>
+      <button class="back button yellow">Back</button>
+    </div>
+
+    <div id="manage" class="page hidden">
+      <h2>Manage questions</h2>
+      <div id="list" class="list"></div>
+      <button id="export" class="button play">Export questions</button>
+      <button id="importButton" class="button yellow">Import questions</button>
+      <input id="importFile" type="file" accept=".json" hidden>
+      <button class="back button yellow">Back</button>
+    </div>
+
+    <div id="end" class="page hidden">
+      <h2>Game over</h2>
+      <p>Score: <b id="finalScore">0</b></p>
+      <p>Answered: <b id="finalCount">0</b></p>
+      <button id="again" class="button play">Play again</button>
+      <button id="menuButton" class="button yellow">Menu</button>
+    </div>
+
+    <div id="quizGame" class="page hidden">
+      <h2>Answer Rush</h2>
+      <div class="quizTop"><span>Score: <b id="quizScore">0</b></span><span>Time: <b id="quizTime">30</b></span></div>
+      <div class="quizQuestion"><small id="quizCategory">MOLES</small><b id="quizQuestionText">Question</b></div>
+      <div id="quizAnswers" class="quizAnswers"></div>
+      <button id="quizQuit" class="button yellow">Back</button>
+    </div>
+  </main>
+  <script src="final.js"></script>
+</body>
+</html>
